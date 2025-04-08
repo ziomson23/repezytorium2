@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <h1>Algorytmy</h1>
+    <ul>
+        <li><a href="abc.html">Strona główna</a></li>
+        <li><a href="1.html">Silnia</a></li>
+        <li><a href="2.html">Dodawanie do 100</a></li>
+        <li><a href="3.html">Potegowanie</a></li>
+
+    </ul>
+    <p>Dodawanie do 100</p>
+    <p id="a"></p>
+    +
+    <p id="b"></p>
+    =
+
+    Podaj odpowiedź: <input id="wynik" type="number"><br>
+    <button id="button1">Losuj</button><br>
+    <button id="button2">Sprawdź</button>
+    <p id="odp"></p>
+    <script>
+        var przycisk1 = document.getElementById("button1");
+        przycisk1.addEventListener("click", function(){
+            do{
+                a=Math.floor(Math.random()*101);
+                b=Math.floor(Math.random()*101);
+            }
+            while(a+b>100);
+            document.getElementById("a").innerHTML=a;
+            document.getElementById("b").innerHTML=b;
+        });
+
+        var przycisk2 = document.getElementById("button2");
+        przycisk2.addEventListener("click", function(){
+            wynik = document.getElementById("wynik").value;
+            if(wynik==""){
+                alert("Wpisz odpowiedź >:(");
+            }else if(wynik==a+b){
+                document.getElementById("odp").innerHTML="Tak :)";
+            }else if(wynik!=a+b){
+                document.getElementById("odp").innerHTML="Nie :(";
+            }
+            }
+        );
+    </script>
+</body>
+</html>
